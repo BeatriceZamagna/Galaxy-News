@@ -1,0 +1,461 @@
+@font-face {
+    font-family: Poppins;
+    src: url(/css/Poppins-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    /*rende il contenitore flessibile*/
+    justify-content: center;
+    /*posizione gli elementi al centro orizzontalmente*/
+    align-items: center;
+    /*compatta gli elementi verticalmente*/
+    min-height: 100vh;
+    /*altezza minima a tutto schermo*/
+    background: url(/img/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 50px;
+}
+
+.container {
+    position: relative;
+    /*poszione relativa*/
+    width: 100%;
+    /*il contenitore prenderà il 100% dello spazio disponibile*/
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    /* display: flex; */
+    justify-content: center;
+    padding: 150px 50px 100px 50px;
+}
+
+header {
+    position: absolute;
+    /*con absolute definisco la sua poszione altrimenti considererbbe flex*/
+    top: -40px;
+    right: 20px;
+    left: 20px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    backdrop-filter: blur;
+}
+
+#logoimg {
+    width: 7%;
+    position: absolute;
+    height: auto;
+    margin: 0%;
+    padding-top: 2em;
+}
+
+header .logo {
+    color: #252d96;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+header ul li a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3em;
+    color: #252d96;
+    padding: 8px 15px;
+    border-radius: 25px;
+}
+
+header ul li a:hover {
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    color: #252d96;
+    /* display: flex; */
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.Radius {
+    visibility: hidden;
+}
+
+#searchbar {
+    width: 90%;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+}
+
+#search {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #444991;
+    width: 90%;
+    height: 3em;
+    border-radius: 20px;
+    display: flex;
+    float: left;
+    justify-content: center;
+    text-align: center;
+    font-size: 1em;
+}
+
+#search:hover {
+    border: 1px solid #444991;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#searchbutton {
+    float: right;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #444991;
+    width: 10%;
+    height: 3em;
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    font-size: 1em;
+}
+
+#searchbutton:hover {
+    border: 1px solid #444991;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#stream {
+    float: right;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #444991;
+    width: 9%;
+    border-radius: 20px;
+    text-align: center;
+    margin-right: 1.4em;
+    font-size: larger;
+}
+
+#stream2 {
+    padding-left: 3em;
+    padding-right: 3em;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #444991;
+    width: 9%;
+    border-radius: 20px;
+    text-align: center;
+    margin-right: 1.4em;
+    font-size: larger;
+}
+
+#stream:hover {
+    border: 1px solid #444991;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#buttonstream {
+    width: 100%;
+}
+
+#radiobutts {
+    text-align: center;
+}
+
+input[type="radio"],
+input[type="radio"]:hover,
+input[type="radio"]:checked {
+    appearance: none;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+input[type="radio"]:hover {
+    border: 1px solid #252d96;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type="radio"]:checked {
+    border: 1px solid #252d96;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background: #444991;
+}
+
+#dropd {
+    text-align: center;
+}
+
+.offer {
+    color: #252d96;
+}
+
+
+/* .containter2 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.containter2 .card {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    margin: 20px;
+    margin-top: 0px;
+    color: #161a58;
+} */
+
+#space {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: smaller;
+}
+
+.ourTweets {
+    margin: 0;
+    padding: 0;
+    width: 60em;
+}
+
+.pluscontent {
+    display: flex;
+    margin-top: 2em;
+    width: 97%;
+}
+
+.containerMap {
+    width: 650px;
+    height: 470px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    margin-top: 0px;
+    color: #161a58;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerWordCloud {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    margin: 20px;
+    margin-top: 0px;
+    color: #161a58;
+}
+
+.chartdiv_instogram {
+    width: 700px;
+    height: 350px;
+    margin: 2em;
+}
+
+.chartdiv_donut {
+    width: 800px;
+    height: 350px;
+    margin: 2em;
+}
+
+.chartdiv_pie {
+    width: 439px;
+    height: 250px;
+}
+
+#map {
+    width: 600px;
+    height: 400px;
+    padding-left: 3em;
+}
+
+#chardiv {
+    /* wordCloud */
+    width: 100%;
+    height: 500px;
+}
+
+.buttonmaphome {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #444991;
+    border-radius: 20px;
+    text-align: center;
+    width: 15%;
+}
+
+#emoji {
+    padding-top: 0px;
+    padding-left: 0px;
+}
+
+#imgEmoji {
+    width: 50%;
+    height: auto;
+}
+
+#imgEm {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#pieSentimental {
+    width: 100px;
+    height: auto;
+}
+
+#div_pie {
+    width: 400px;
+    height: auto;
+}
+
+#chart_isto_section {
+    width: 97%;
+    height: 500px;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    margin: 20px;
+    margin-top: 0px;
+    color: #161a58;
+}
+
+#chart_isto {
+    width: 100%;
+    height: 450px;
+    align-items: center;
+}
+
+#chart_globe {
+    width: 100%;
+    height: 550px;
+}
+
+#loadingCircle {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.containerSentimental {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    margin: 20px;
+    margin-top: 0px;
+    color: #161a58;
+}
+
+#totalSentimental {
+    display: flex;
+    flex-direction: column;
+}
+
+#div_pie {
+    width: 90%;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+#loading {
+    padding-top: 3em;
+    padding-bottom: 1em;
+}
+
+#loadingText {
+    padding-top: 1em;
+}
+
+#buttonSpace {
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonmap {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #444991;
+    border-radius: 20px;
+    text-align: center;
+    width: 15%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 25%;
+    width: 50%;
+    font-size: larger;
+}
+
+#container_concorso {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+#trivia-li {
+    text-align: center;
+    list-style: none;
+}
+
+.div_concorso {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 2em;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    margin: 20px;
+    margin-top: 0px;
+    color: #161a58;
+}

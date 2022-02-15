@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/TwitterHome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="img/favicon.png">
+    
+    <!--libreria jquery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <title>TravelSearch</title>
+</head>
+
+<body>
+    <section id="section">
+        <div class="container">
+            <header>
+                <img id="logoimg" src="img/logo.png">
+                <a href="home" class="logo" style="padding-left: 3em;">GALAXY NEWS</a>
+
+                <ul>
+                    <li><a href="home"> Home </a></li>
+                    <li><a href="concorso"> Concorso </a></li>
+                    <li><a href="trivia"> Trivia </a></li>
+                    <li><a href="travelSply"> TravelSearch </a></li>
+                    <li><a onclick="streamPage()"> Stream </a></li>
+                    <li><a href="team"> Team </a></li>
+                </ul>
+            </header>
+
+            <div class="maincontainer">
+
+                <div class="title">
+                  <h2> La sezione TravelSearch ti permette di mappare gli spostamenti dei tuoi utenti preferiti</h2>
+                  <br>
+                  <h3> &nbsp Prova a digitare un username per vedere i suoi spostamenti sulla mappa </h3>
+                  <br>
+                  <h3> &nbsp Hai anche la possibilità di visualizzare il percorso migliore su Maps</h3>
+                </div>
+
+                <form id="searchbar" action="javascript:getGlobeData()">
+                    <input id="search" type="text" value="@" placeholder="   &#128269 L'avventura inizia qui..." >
+                    <button id="searchbutton" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+
+            </div> <!--fine maincontainer-->
+
+        </div>
+
+        <div id="container">
+
+          <div id="loading"></div>
+          <div id="chart_globe"></div>
+          <div id="buttonSpace"></div>
+
+          <div id="space">
+              <!--questa parte conterrà i tweet in risposta-->
+          </div>
+
+        </div> <!--fine container-->
+
+    </section>
+
+</body>
+
+<script type="text/javascript " src="/js/globe.js "></script>
+<script type="text/javascript " src="/js/travelSpy.js "></script>
+<script type="text/javascript " src="/js/streamNewPage.js "></script>
+
+</html>

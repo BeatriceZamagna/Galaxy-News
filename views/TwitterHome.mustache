@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/TwitterHome.css">
+    <!-- <link rel="stylesheet" href="/css/map.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <!--libreria jquery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!--libreria stream-->
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+
+    <!--parte librerie leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <!--librerie amchart per wordCloud = in realtà credo basti averle solo in map.mustache-->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/wc.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+
+    <title>Home</title>
+</head>
+
+<body>
+    <section id="section">
+        <div class="container">
+
+            <header>
+                <img id="logoimg" src="img/logo.png">
+                <a href="home" class="logo" style="padding-left: 3em;">GALAXY NEWS</a>
+
+                <ul>
+                    <li><a href="home"> Home </a></li>
+                    <li><a href="concorso"> Concorso </a></li>
+                    <li><a href="trivia"> Trivia </a></li>
+                    <li><a href="travelSply"> TravelSearch </a></li>
+                    <li><a onclick="streamPage()"> Stream </a></li>
+                    <li><a href="team"> Team </a></li>
+
+                </ul>
+            </header>
+
+            <div class="maincontainer">
+
+                <div class="title">
+                    <h2>EVERYTHING AND ANYTHING ALL OF THE TIME</h2>
+                </div>
+
+                <form id="radiobutts">
+                    <input class="inputra" type="radio" onclick="javascript:RadiusAppear();" id="key" name="searchby" value="searchText" checked>
+                    <label class="labelInput" for="key">Keyword &nbsp;&nbsp;</label>
+                    <input class="inputra" type="radio" onclick="javascript:RadiusAppear();" id="hash" name="searchby" value="searchHashtag">
+                    <label class="labelInput" for="hash">Hashtag &nbsp;&nbsp;</label>
+                    <input class="inputra" type="radio" onclick="javascript:RadiusAppear();" id="user" name="searchby" value="searchbyUser">
+                    <label class="labelInput" for="user">Username &nbsp;&nbsp;</label>
+                    <input class="inputra" type="radio" onclick="javascript:RadiusAppear();" id="loc" name="searchby" value="searchLocation">
+                    <label for="loc">Location</label>
+                </form>
+
+                <br>
+
+                <form id="dropd">
+                    <label id="orderby">Order by: &nbsp</label>
+                    <select id="order" name="orderBy">
+                        <option value="mixed" selected> Mixed</option>
+                        <option value="recent"> Recent</option>
+                        <option value="popular"> Popular</option>
+                    </select>
+
+                    <label for="num_tweet">Number of tweets: &nbsp</label>
+                    <input type="number" name="num_tweet" id="num_tweet" min="5" value="10" max="50">
+
+                    <label class="Radius" id="radius_label" for="radius">Radius of search: &nbsp</label>
+                    <input class="Radius" type="number" name="radius" id="radius" min="1" value="20" max="50">
+                </form>
+
+                <br>
+
+                <form id="searchbar" action="javascript:func()">
+                    <input id="search" type="text" placeholder="   &#128269 L'avventura inizia qui...">
+                    <button id="searchbutton" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+
+
+            </div>
+            <!--fine maincontainer-->
+        </div>
+        <!--fine container-->
+        <span id="ppprova"></span>
+        <div id="grafici_iniziali" style="visibility:hidden">
+            <div class="pluscontent">
+
+                <div class="containerMap">
+                    <div id="map"> </div>
+                    <!-- Questo è il div che conterrà la mappa -->
+                    <button class="buttonmaphome" type="button" onclick="setView()">Reset view</button>
+                    <button class="buttonmaphome" type="button" onclick="clearMap()">Clear map</button>
+                </div>
+
+                <div class="containerWordCloud" style="width:400px; height:470px;">
+                    <h3> WordCloud per avere un riassunto delle parole più utilizzate! </h3>
+                    <div id="chartdiv" style="width:300px; height:290px;"> </div>
+                    <!-- div che conterrà la wordcloud -->
+                </div>
+
+                <div id="totalSentimental">
+                    <div id="imgEm" class="containerSentimental" style="width:250px; height:200px;">
+                        <h3>Sentiment Analysis:
+                            <br>
+                            <p id="result"> </p>
+                        </h3>
+                        <img id="imgEmoji" src="img/emoji/happy.png" style="padding-top: 0.5em;">
+                    </div>
+
+                    <div id="div_sentimental" class="containerSentimental" style="width:250px; height:250px;">
+                        <div id="div_pie"> </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--fine pluscontent-->
+        </div>
+
+        <div id="chart_isto_section" style="display:none">
+            <!--parte istogramma-->
+            <div id="chart_isto">
+            </div>
+        </div>
+
+        <div id="loading1"></div>
+        <div id="loading2"></div>
+
+        <div id="space">
+            <!--questa parte conterrà i tweet in risposta-->
+        </div>
+
+    </section>
+
+</body>
+
+<script type="text/javascript " src="/js/options.js "></script>
+<script type="text/javascript " src="/js/pie.js "></script>
+<script type="text/javascript " src="/js/wordCloud.js "></script>
+<script type="text/javascript " src="/js/newPage.js "></script>
+<script type="text/javascript " src="/js/map.js "></script>
+<script type="text/javascript " src="/js/script.js "></script>
+<script type="text/javascript " src="/js/isto_tweet.js "></script>
+<script type="text/javascript " src="/js/streamNewPage.js "></script>
+
+</html>

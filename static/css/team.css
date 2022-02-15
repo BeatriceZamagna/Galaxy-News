@@ -1,0 +1,134 @@
+@font-face {
+    font-family: Poppins;
+    src: url(/css/Poppins-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    /*rende il contenitore flessibile*/
+    justify-content: center;
+    /*posizione gli elementi al centro orizzontalmente*/
+    align-items: center;
+    /*compatta gli elementi verticalmente*/
+    min-height: 100vh;
+    /*altezza minima a tutto schermo*/
+    background-image: url(/img/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 50px;
+}
+
+.container {
+    position: relative;
+    /*poszione relativa*/
+    width: 100%;
+    /*il contenitore prenderà il 100% dello spazio disponibile*/
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 100px 50px 100px 50px;
+}
+
+header {
+    position: absolute;
+    /*con absolute definisco la sua poszione altrimenti considererbbe flex*/
+    top: -40px;
+    right: 20px;
+    left: 20px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    backdrop-filter: blur;
+}
+
+#logoimg {
+    width: 9%;
+    position: absolute;
+    height: auto;
+    margin: 0%;
+    padding-top: 3em;
+}
+
+header .logo {
+    color: #252d96;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+header ul li a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3em;
+    color: #252d96;
+    padding: 8px 15px;
+    border-radius: 25px;
+}
+
+header ul li a:hover {
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pictures {
+    display: flex;
+}
+
+.imgProf {
+    height: 10em;
+    width: auto;
+    border-radius: 100%;
+    opacity: 0.6;
+    transition: all 200ms ease-in;
+    margin: 2em;
+}
+
+.imgProf:hover {
+    opacity: 1;
+}
+
+.profilo {
+    text-align: center;
+    color: #161a58;
+}
+
+.containter2 {
+    display: flex;
+    position: relative;
+    top: -70px;
+    padding: 1em;
+}
+
+.containter2 .card {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
+    margin: 15px;
+    margin-top: 0px;
+    color: #161a58;
+}

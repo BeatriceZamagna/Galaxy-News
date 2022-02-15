@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/TwitterHome.css">
+    <link rel="stylesheet" href="/css/map.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Concorso</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+
+
+</head>
+
+
+<body>
+    <section id="section">
+        <div class="container">
+            <header>
+                <img id="logoimg" src="img/logo.png">
+                <a href="home" class="logo" style="padding-left: 3em;">GALAXY NEWS</a>
+
+                <ul>
+                    <li><a href="home"> Home </a></li>
+                    <li><a href="concorso"> Concorso </a></li>
+                    <li><a href="trivia"> Trivia </a></li>
+                    <li><a href="travelSply"> TravelSearch </a></li>
+                    <li><a onclick="streamPage()"> Stream </a></li>
+                    <li><a href="team"> Team </a></li>
+                </ul>
+            </header>
+            <div class="title">
+                <h3> La sezione Concorso pemette di visualizzare statistiche sugli attuali concorsi letterari di Twitter!</h3>
+                <br>
+                <h5> &nbsp Partecipare è facilissimo! Se vuoi bandire un concorso basta fare un tweet con scritto <i> #bandiscoConcorso NomeConcorso </i> </h5>
+                <br>
+                <h5> &nbsp Se invece vuoi partecipare ad un concorso con un tuo racconto basta fare un tweet con scritto <i> #partecipoConcorso NomeConcorso, NomeRacconto</i></h5>
+                <br>
+                <h5> &nbsp Infine se vuoi votare il tuo racconto preferito basta un teet con scritto <i> #votoRacconto NomeConcorso, NomeRacconto</i></h5>
+                <br>
+                <h6> Ricorda che hai 10 voti che puoi usare come preferisci!</h6>
+            </div>
+        </div>
+
+
+        <div id="container_concorso">
+
+        </div>
+
+    </section>
+
+    <script type="text/javascript" src="/js/donut.js"></script>
+    <script type="text/javascript" src="/js/instogram.js"></script>
+    <script type="text/javascript" src="/js/concorso.js"></script>
+    <script type="text/javascript " src="/js/streamNewPage.js "></script>
+
+</body>

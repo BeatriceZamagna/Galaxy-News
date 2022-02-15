@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/TwitterHome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Stream</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/stream.js"></script>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+
+            <div class="title">
+                <h3> Nella sezione Stream puoi vedere in streaming i Tweet relativi al tema viaggio, <br> per trovare ispirazioni per la tua prossima avventura!</h3>
+                <br>
+                <h4> Non dimenticarti di interrompere la Stream con il tasto qui sotto prima di chiudere la pagina! </h4>
+            </div>
+            <div id="buttonstream" style="align-items: center; justify-content: center;">
+                <a id="stream2" onclick="closeStream()"> CHIUDI STREAM </a>
+            </div>
+        </div>
+
+        <div id="space">
+        </div>
+
+    </section>
+</body>
