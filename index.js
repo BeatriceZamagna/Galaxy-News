@@ -24,10 +24,10 @@ const sentiment = require('multilang-sentiment');
 const languages_list = ["af", "am", "ar", "az", "be", "bg", "bn", "bs", "ca", "ceb", "co", "cs", "cy", "da", "de", "el", "en", "eo", "es", "et", "eu", "fa", "fi", "fr", "fy", "ga", "gd", "gl", "gu", "ha", "haw", "hi", "hmn", "hr", "ht", "hu", "hy", "id", "ig", "is", "it", "iw", "ja", "jw", "ka", "kk", "km", "kn", "ko", "ku", "ky", "la", "lb", "lo", "lt", "lv", "mg", "mi", "mk", "ml", "mn", "mr", "ms", "mt", "my", "ne", "nl", "no", "ny", "pa", "pl", "ps", "pt", "ro", "ru", "sd", "si", "sk", "sl", "sm", "sn", "so", "sq", "sr", "st", "su", "sv", "sw", "ta", "te", "tg", "th", "tl", "tr", "uk", "ur", "uz", "vi", "xh", "yi", "yo", "zh-tw", "zh", "zu"];
 
 var tweet = new twit({
-    consumer_key: 'GXjIK3tlYbKyH9DVvaMg1VRMb',
-    consumer_secret: 'xPJZaBH5CxKTaSwBOlLTkyyRGqKQGwrkuQ6KEC6bwh42EQP7CW',
-    access_token: '1424820092634910722-WYfxYxYDDsHMz4BzWd4nNaEOv5sbBf',
-    access_token_secret: 'TsFSQIC03w3NJSw2W4exfqAZkasOwkhDLscDPgfgYWD7L',
+    consumer_key: '',
+    consumer_secret: '',
+    access_token: '',
+    access_token_secret: '',
 
 })
 
@@ -307,13 +307,6 @@ app.get('/stream/tweets', async(req, res) => {
         console.log("ERROR IN STREAM: ", e);
         res.status(404).json(e);
     }
-
-    //let percorso = path.resolve(__dirname, 'stream.html')
-    //res.sendFile(percorso);
-
-    // io.on("connection", (socket) => {
-    //     console.log('IO connected...')
-    // });
 
 });
 
